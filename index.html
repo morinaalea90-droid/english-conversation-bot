@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Mësues Anglisht</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🤖 Bot Mësues Anglisht</h1>
+            <p>Mëso anglisht nëpërmjet bisedës!</p>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <div class="chat-box" id="chatBox">
+                <div class="message bot-message">
+                    <span class="bot-icon">🤖</span>
+                    <div class="message-content">
+                        Përshëndetje! Unë jam boti yt mësues i anglishtes. Si mund të të ndihmoj sot? 
+                        <br><br>
+                        <strong>Zgjedh një mënyrë për të filluar:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>📝 Shkruaj një fjalim në anglisht</li>
+                            <li>❓ Pyet pyetje rreth anglishtes</li>
+                            <li>💬 Praktiko bisedë të përditshme</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mode Selection -->
+            <div class="mode-selector">
+                <button class="mode-btn" data-mode="conversation">💬 Bisedë</button>
+                <button class="mode-btn" data-mode="grammar">📚 Gramatikë</button>
+                <button class="mode-btn" data-mode="vocabulary">📖 Fjalor</button>
+                <button class="mode-btn" data-mode="correction">✏️ Korrigjim</button>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Shkruaj mesazhin tënd në anglisht këtu..."
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button id="sendBtn" onclick="sendMessage()">Dërgo</button>
+            </div>
+
+            <!-- Clear History Button -->
+            <div class="action-buttons">
+                <button class="clear-btn" onclick="clearChat()">🗑️ Fshi Historinë</button>
+                <button class="reset-btn" onclick="resetBot()">🔄 Rivendos</button>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-item">
+                <span class="stat-label">Mesazhe të dërguar:</span>
+                <span class="stat-value" id="messageCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Nivel aktual:</span>
+                <span class="stat-value" id="levelDisplay">Fillestar</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Mënyra:</span>
+                <span class="stat-value" id="modeDisplay">Bisedë</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
